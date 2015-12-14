@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+    <script src="todo.js"></script>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    
+    <div ng-controller="TodoListController as todoList">        <!-- มันจะมีอำนาจตั้งแต่บรรทัดนี้ จนถึง /div ของตัวมั้น as ในชื่อนี้  -->
+   
+    <hr> 
+      <button ng-click='todoList.add(10)' >10</button>
+      <button ng-click='todoList.add(30)' >30</button>
+      <button ng-click='todoList.add(35)' >35</button>
+      <button ng-click='todoList.clear()' >Clear</button>
+      <hr>
+      	{{todoList.sum()}}
+     <hr>
+      <div ng-repeat='todo in todoList.data'>
+        {{todo.value}}
+      </div>
+
+
+    </div>
+  </body>
+</html>
